@@ -41,13 +41,27 @@ iframe{
     border:none;
 }
 
+.header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+}
+
+.header img{
+    width:60px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<h1>Caneca Animada</h1>
+<div class="header">
+    <h1>Caneca Animada</h1>
+    <img src="caneca.gif" alt="Caneca animada">
+</div>
 
 <div class="video-container">
     <iframe id="player"
@@ -92,4 +106,5 @@ if(videoId){
 
 </body>
 </html>
+
 
