@@ -5,42 +5,60 @@
 <meta charset="UTF-8">
 <title>Minha Marca</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
 body{
-    background:#ddd;
+    margin:0;
+    background:#000;
     font-family:Arial;
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
 }
 
 h1{
-    margin-top:30px;
+    color:white;
+    margin:10px;
 }
 
-.video-box{
-    width:360px;
-    height:640px;
-    margin:40px auto;
-    border:4px solid black;
+.video-container{
+
+    width:100%;
+    max-width:420px;
+
+    aspect-ratio: 9 / 16;
+
+    border:4px solid #222;
 }
 
 iframe{
     width:100%;
     height:100%;
+    border:none;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <h1>Minha Marca</h1>
 
-<div class="video-box">
-    <iframe id="player" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+    <iframe id="player"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+    </iframe>
 </div>
 
 <script>
 
-function getVideoId(url) {
+function getVideoId(url){
 
     if(!url) return null;
 
@@ -62,8 +80,12 @@ const videoParam = params.get("v");
 const videoId = getVideoId(videoParam);
 
 if(videoId){
+
     document.getElementById("player").src =
-        "https://www.youtube.com/embed/" + videoId;
+        "https://www.youtube.com/embed/" +
+        videoId +
+        "?autoplay=1&mute=1&playsinline=1";
+
 }
 
 </script>
